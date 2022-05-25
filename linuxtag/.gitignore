@@ -1,0 +1,14 @@
+*
+
+!.gitignore
+
+!*/
+
+!*.md
+!*.sh
+
+!*.py
+
+linuxtag.egg-info/
+.eggs/
+build/
