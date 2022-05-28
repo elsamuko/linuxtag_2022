@@ -11,6 +11,7 @@ setup(
     description='Demo project for Linuxtag 2022',
     url='https://github.com/elsamuko/linuxtag_2020',
     packages=find_packages(),
+    test_suite="tests",
     setup_requires=[
         "setuptools_scm", # for use_scm_version
     ],
