@@ -1,5 +1,6 @@
 
 import importlib.metadata as metadata
+import logging
 import signal
 import sys
 from typing import Any
@@ -17,11 +18,24 @@ def handler(signum: int, frame: Any) -> None:
     sys.exit(0)
 
 
+def configure_logger():
+    logging.basicConfig(
+        level=logging.INFO,
+        format="[%(levelname)8s] %(asctime)s %(funcName)10s : %(message)s",
+        handlers=[
+            logging.StreamHandler(),
+        ]
+    )
+
+
 def main() -> None:
     # handle keyboard interrupts
     signal.signal(signal.SIGINT, handler)
 
+    configure_logger()
+
     print("Hello!")
+    logging.info("Hello!")
     print(get_version())
 
 
