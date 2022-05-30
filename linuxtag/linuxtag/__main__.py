@@ -2,6 +2,7 @@
 import importlib.metadata as metadata
 import signal
 import sys
+from typing import Any
 
 
 def get_version() -> str:
@@ -11,7 +12,7 @@ def get_version() -> str:
         return "0.0"
 
 
-def handler(signum, frame):
+def handler(signum: int, frame: Any) -> None:
     print("Exiting...")
     sys.exit(0)
 
