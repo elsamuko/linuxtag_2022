@@ -1,5 +1,7 @@
 
 import importlib.metadata as metadata
+import signal
+import sys
 
 
 def get_version() -> str:
@@ -9,7 +11,15 @@ def get_version() -> str:
         return "0.0"
 
 
+def handler(signum, frame):
+    print("Exiting...")
+    sys.exit(0)
+
+
 def main() -> None:
+    # handle keyboard interrupts
+    signal.signal(signal.SIGINT, handler)
+
     print("Hello!")
     print(get_version())
 
