@@ -18,7 +18,7 @@ def handler(signum: int, frame: Any) -> None:
     sys.exit(0)
 
 
-def configure_logger():
+def configure_logger() -> None:
     logging.basicConfig(
         level=logging.INFO,
         format="[%(levelname)8s] %(asctime)s %(funcName)10s : %(message)s",
