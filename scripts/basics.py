@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+# comments
+"""
+    multiline
+    comments
+"""
 
 
 class Hase:
@@ -23,8 +28,9 @@ class Hase:
         """ setter """
         self.__legs = legs
 
+# run only if file is called directly
+if __name__ == "__main__":
+    hase = Hase(4, 5)
+    hase.legs = 6
 
-hase = Hase(4, 5)
-hase.legs = 6
-
-print(hase)
+    print(hase)
