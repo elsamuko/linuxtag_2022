@@ -28,6 +28,7 @@ class Hase:
         """ setter """
         self.__legs = legs
 
+
 # run only if file is called directly
 if __name__ == "__main__":
     hase = Hase(4, 5)

@@ -11,18 +11,19 @@ def a_decorator(func):
 
 
 @a_decorator
-def func(a,b):
+def func(a, b):
     print("within")
     return a+b
 
+
 @a_decorator
-def func2(a,b):
+def func2(a, b):
     print("within 2")
-    return a,b
+    return a, b
 
 
-print(func(1,2))
+print(func(1, 2))
 print("")
 
-print(func2(1,2)    )
+print(func2(1, 2))
 print("")
