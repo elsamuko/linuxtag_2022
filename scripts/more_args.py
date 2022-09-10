@@ -12,8 +12,8 @@ def main():
 
     args = parser.parse_args()
 
-    print(args.filename)
-    print(args.append)
+    print(f"filename: {args.filename}")
+    print(f"append  : {args.append}")
 
     if args.verbose:
         print("verbose is on!")
