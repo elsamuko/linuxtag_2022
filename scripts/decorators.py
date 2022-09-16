@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
+import functools
 
 def a_decorator(func):
+    @functools.wraps(func) # applies meta information from wrapped function
     def inner(*args, **kwargs):
         print(f"before {func.__name__}")
         rv = func(*args, **kwargs)
