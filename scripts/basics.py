@@ -15,6 +15,9 @@ class Hase:
         self.ears = ears   # public members
         self.__legs = legs  # 'private' members start with __
 
+    def __del__(self):
+        print("I' m destructed")
+
     def __repr__(self) -> str:
         return f"I'm {Hase.name} with {self.ears} ears and {self.__legs} legs"
 
