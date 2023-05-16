@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "linuxtag"
+description = "Demo project for Linuxtag 2022"
+dependencies = ["importlib-metadata"]
+dynamic = ["version"]
+
+[tool.setuptools_scm]
+root = ".."
+
+[project.scripts]
+linuxtag = "linuxtag.__main__:main"

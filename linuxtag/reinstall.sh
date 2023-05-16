@@ -15,7 +15,7 @@ green "Removing old package"
 python3 -m pip uninstall linuxtag --yes 2>&1 | indent
 
 green "Cleaning build"
-python3 setup.py clean --all 2>&1 | indent
+# python3 setup.py clean --all 2>&1 | indent
 rm -rf linuxtag.egg-info
 
 green "Installing new package"
