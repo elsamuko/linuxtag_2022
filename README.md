@@ -1,4 +1,4 @@
-# Linuxtag 2022
+# Linuxtag 2023
 
 ## Scripting
     * hello, basics
@@ -6,7 +6,7 @@
     * args, more_args, easy_args
     * decorators
 ## Debugging mit Code
-## Paketerstellung mit setup.py
+## Paketerstellung mit pyproject.toml
 ## Unit Testing
 ## Typchecking mit flake8, mypy
 ## Tabellen mit Pandas
