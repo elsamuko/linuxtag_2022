@@ -1,4 +1,3 @@
-
 import importlib.metadata as metadata
 import logging
 import signal
@@ -6,11 +5,18 @@ import sys
 from typing import Any
 
 
+def parse_version(version: str) -> str:
+    # 0.1.post18 -> 0.1.18
+    return version.replace("post", "")
+
+
 def get_version() -> str:
+    version = "0.1.0"
     try:
-        return str(metadata.version("linuxtag"))
+        version = str(metadata.version("linuxtag"))
     except metadata.PackageNotFoundError:
-        return "0.0"
+        pass
+    return parse_version(version)
 
 
 def handler(signum: int, frame: Any) -> None:
@@ -24,7 +30,7 @@ def configure_logger() -> None:
         format="[%(levelname)8s] %(asctime)s %(funcName)10s : %(message)s",
         handlers=[
             logging.StreamHandler(),
-        ]
+        ],
     )
 
 
