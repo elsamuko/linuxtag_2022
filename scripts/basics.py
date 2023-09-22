@@ -5,6 +5,9 @@
     comments
 """
 
+# imports
+from __future__ import annotations
+
 
 class Hase:
     name = "Hase"  # global static
@@ -14,6 +17,10 @@ class Hase:
         """ constructor """
         self.ears = ears   # public members
         self.__legs = legs  # 'private' members start with __
+
+    @classmethod
+    def another(cls, legs) -> Hase:
+        return cls(0, legs)
 
     def __del__(self):
         print("I' m destructed")
@@ -38,3 +45,6 @@ if __name__ == "__main__":
     hase.legs = 6
 
     print(hase)
+
+    hase2 = Hase.another(legs=4)
+    print(hase2)
