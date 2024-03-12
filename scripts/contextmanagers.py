@@ -20,3 +20,20 @@ print()
 with ContextManager("Hello") as ctx, ContextManager("Hello2") as ctx2:
     print(ctx)
     print(ctx2)
+
+print()
+
+# https://docs.python.org/3/library/contextlib.html#module-contextlib
+from contextlib import contextmanager
+
+@contextmanager
+def manager_func(*args, **kwds):
+    arg = args[0]
+    print(f"__enter__ : {arg}")
+    try:
+        yield arg
+    finally:
+        print(f"__exit__ : {arg}")
+
+with manager_func("Hello3") as ctx:
+    print(ctx)
